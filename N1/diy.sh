@@ -14,15 +14,33 @@ function git_sparse_clone() {
 }
 
 # Add packages
+git clone https://github.com/kenzok8/small-package package/small-package
  # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-passwall2 passwall2
- git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
-                                                                
-
-                         
-                                                        
+# git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
+# 删除重复包
+# rm -rf feeds/luci/applications/luci-app-netdata
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf package/small-package/luci-app-openvpn-server
+rm -rf package/small-package/openvpn-easy-rsa-whisky
+rm -rf package/small-package/luci-app-wrtbwmon
+rm -rf package/small-package/wrtbwmon
+rm -rf package/small-package/luci-app-koolproxyR
+rm -rf package/small-package/luci-app-godproxy
+rm -rf package/small-package/luci-app-argon*
+rm -rf package/small-package/luci-theme-argon*
+rm -rf package/small-package/luci-app-amlogic
+rm -rf package/small-package/luci-app-unblockneteasemusic
+rm -rf package/small-package/upx-static
+rm -rf package/small-package/upx
+rm -rf package/small-package/firewall*
+rm -rf package/small-package/opkg
+rm -rf package/feeds/packages/aliyundrive-webdav
+rm -rf feeds/packages/multimedia/aliyundrive-webdav
+rm -rf package/feeds/packages/perl-xml-parser
+rm -rf package/feeds/packages/xfsprogs                                           
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/N1/preset-clash-core.sh
