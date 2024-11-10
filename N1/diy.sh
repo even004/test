@@ -22,16 +22,16 @@ git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
 # 删除重复包
 # rm -rf feeds/luci/applications/luci-app-netdata
-rm -rf feeds/luci/themes/luci-theme-argon
+# rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/small-package/luci-app-openvpn-server
 rm -rf package/small-package/openvpn-easy-rsa-whisky
 rm -rf package/small-package/luci-app-wrtbwmon
 rm -rf package/small-package/wrtbwmon
 rm -rf package/small-package/luci-app-koolproxyR
 rm -rf package/small-package/luci-app-godproxy
-rm -rf package/small-package/luci-app-argon*
-rm -rf package/small-package/luci-theme-argon*
-rm -rf package/small-package/luci-app-amlogic
+# rm -rf package/small-package/luci-app-argon*
+# rm -rf package/small-package/luci-theme-argon*
+# rm -rf package/small-package/luci-app-amlogic
 rm -rf package/small-package/luci-app-unblockneteasemusic
 rm -rf package/small-package/upx-static
 rm -rf package/small-package/upx
@@ -59,3 +59,14 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 
 # 修改主题背景
+cp -f $GITHUB_WORKSPACE/argon/img/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/argon/img/argon.svg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/argon.svg
+cp -f $GITHUB_WORKSPACE/argon/favicon.ico feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/favicon.ico
+cp -f $GITHUB_WORKSPACE/argon/icon/android-icon-192x192.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/android-icon-192x192.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-144x144.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-144x144.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-60x60.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-60x60.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-72x72.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-72x72.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-16x16.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-16x16.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-32x32.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-32x32.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-96x96.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-96x96.png
+cp -f $GITHUB_WORKSPACE/argon/icon/ms-icon-144x144.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png
