@@ -153,13 +153,15 @@ jobs:
     - name: 发布固件到 Releases
       uses: softprops/action-gh-release@master
       if: ${{ env.tag_status == 'success' && env.PACKAGED_STATUS == 'success' && !cancelled() }}
+      env:
+        GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
       with:
         tag_name: OpenWrt_${{ env.PACKAGED_OUTPUTDATE }}
         files: |
              ${{ env.PACKAGED_OUTPUTPATH }}/*.img.xz
              ${{ github.workspace }}/openwrt/diffconfig
         body_path: release.txt
-        token: ${{ env.GITHUB_TOKEN }}
+        
 
    # - name: 电报机器人信息通知
      # if: env.TELEGRAM_BOT_TOKEN && ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
@@ -169,14 +171,18 @@ jobs:
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
+      env:
+        GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
       with:
         retain_days: 1
         keep_minimum_runs: 1
-        token: ${{ env.GITHUB_TOKEN }}
+        
 
     - name: 删除自动发布的旧固件
       uses: dev-drprasad/delete-older-releases@master
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
       with:
         keep_latest: 2
         delete_tags : true
