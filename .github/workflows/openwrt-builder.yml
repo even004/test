@@ -115,7 +115,7 @@ jobs:
       uses: unifreq/openwrt_packit@master
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz
-        KERNEL_VERSION_NAME: 5.15.105_6.6.1
+        KERNEL_VERSION_NAME: 5.15.158_6.6.58
         KERNEL_AUTO_LATEST: false
         PACKAGE_SOC: s905d
         GZIP_IMGS: .xz
@@ -140,8 +140,6 @@ jobs:
         🌳 分支: ${{ env.REPO_BRANCH }}
 
         ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
-
-        🌐 管理地址: 192.168.110.235
 
         👤 用户名: root
 
